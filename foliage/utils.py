@@ -4,8 +4,10 @@ from wagtail import VERSION
 
 if VERSION < (2, 0):
     from wagtail.wagtailcore.models import Page, Site
-else:
+elif VERSION < (3, 0):
     from wagtail.core.models import Page, Site
+else:
+    from wagtail.models import Page, Site
 
 
 def build_page_tree(
